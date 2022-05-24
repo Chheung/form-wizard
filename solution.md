@@ -33,4 +33,16 @@
 
 # Architecture
 
-All UI are built through plain HTML with TailwindCSS as an utility in Vue 3 Framework.
+### - All UI are built through plain HTML with TailwindCSS as an utility in Vue 3 Framework.
+
+### - All steps are divided into routes
+
+<br>
+
+# Approach
+
+### - Fast implementation of an SPA web app using VueJS.
+
+### - Simple and minimal UI/UX for user to easily interact with.
+
+### - Have a nice validations at each pages to make sure users will not be seeing false data or invalid modified data.

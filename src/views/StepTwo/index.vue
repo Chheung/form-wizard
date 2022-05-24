@@ -119,14 +119,14 @@
 import useVuelidate from "@vuelidate/core";
 import { required, integer } from "@vuelidate/validators";
 
-import SimpleInput from "@src/components/Form/SimpleInput.vue";
+import SimpleInput from "../../components/Form/SimpleInput.vue";
 import {
   COUNTRY_INFORMATIONS_CONSTANT,
   PACKAGE_CONSTANT,
   getLocalStorageValue,
   getPremiumPrice,
   getAdditionalPriceByPackage,
-} from "@src/common";
+} from "../../common";
 
 export default {
   name: "StepTwo",
@@ -145,7 +145,6 @@ export default {
       },
     };
   },
-
   validations() {
     return {
       form: {
@@ -154,7 +153,6 @@ export default {
       },
     };
   },
-
   computed: {
     selectedCurrency() {
       return (
@@ -166,11 +164,9 @@ export default {
       return this.premiumPrice() + this.additionalPrice(this.form.pkg) || 0;
     },
   },
-
   setup() {
     return { v$: useVuelidate() };
   },
-
   mounted() {
     for (const key of ["name", "age"]) {
       const localStorageData = getLocalStorageValue(key);
@@ -182,7 +178,6 @@ export default {
         this.v$.form[`${key}`].$touch();
       }
     }
-
     const location = getLocalStorageValue("location");
     if (
       location &&
@@ -196,7 +191,6 @@ export default {
       this.form.pkg = +pkg;
     }
   },
-
   methods: {
     setLocalStorageValue(key, value) {
       localStorage.setItem(key, value);
