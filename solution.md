@@ -29,19 +29,23 @@
 
 ## 📈 `vuelidate` for UX form validations
 
+## ✅ `jest` and `puppeteer` for end to end testing
+
 <br>
 
 # Architecture
 
 ### - All UI are built through plain HTML with TailwindCSS as an utility in Vue 3 Framework.
 
-### - All steps are divided into routes
+### - All steps are divided into routes for better UX when user wants to use back button in the browser instead of ours.
+
+### - End to end testing of the whole form wizard are done through puppeteer + Jest
 
 <br>
 
 # Approach
 
-### - Fast implementation of an SPA web app using VueJS.
+### - Fast implementation of a simple form-wizard SPA web app using Vue 3.
 
 ### - Simple and minimal UI/UX for user to easily interact with.
 
