@@ -2,7 +2,7 @@
   <p v-if="errorText" class="ml-2 text-red-500">{{ errorText }}</p>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: "ValidationErrorText",
   props: {

@@ -17,6 +17,7 @@
             v-model="v$.form.name.$model"
             :validator="v$.form.name"
             @on-input="(val) => setLocalStorageValue('name', val)"
+            extraClass="name"
             label="Name"
           />
         </div>
@@ -26,6 +27,7 @@
             v-model="v$.form.age.$model"
             :validator="v$.form.age"
             @on-input="(val) => setLocalStorageValue('age', val)"
+            extraClass="age"
             label="Age"
           />
         </div>
@@ -33,7 +35,7 @@
           <label> Where do you live:</label>
           <select
             v-model="form.location"
-            class="mt-2 py-3 px-2 border-2 rounded-lg"
+            class="mt-2 py-3 px-2 border-2 rounded-lg location"
             :onchange="(e) => setLocalStorageValue('location', e.target.value)"
           >
             <option
@@ -80,7 +82,7 @@
 
           <!-- Total price -->
           <div class="mt-10 text-center">
-            <p class="text-2xl md:text-3xl">
+            <p id="premium-price" class="text-2xl md:text-3xl">
               Your premium is
               {{ totalPrice }}
               {{ selectedCurrency }}

@@ -1,6 +1,4 @@
-import { CountryInformation } from "..";
-
-export const COUNTRY_INFORMATIONS_CONSTANT: CountryInformation[] = [
+export const COUNTRY_INFORMATIONS_CONSTANT = [
   {
     label: "Hong Kong",
     value: 0,

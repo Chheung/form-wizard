@@ -1,8 +1,4 @@
-export const PACKAGE_CONSTANT: {
-  label: string;
-  value: number;
-  addOnPercentage: number;
-}[] = [
+export const PACKAGE_CONSTANT = [
   {
     label: "Standard",
     value: 0,

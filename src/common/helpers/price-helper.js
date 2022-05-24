@@ -1,6 +1,6 @@
 import { COUNTRY_INFORMATIONS_CONSTANT, PACKAGE_CONSTANT } from "..";
 
-export const getPremiumPrice = (age: number, locationValue: number) => {
+export const getPremiumPrice = (age, locationValue) => {
   const selectedCountry = COUNTRY_INFORMATIONS_CONSTANT.find(
     (c) => c.value === locationValue
   );
@@ -8,10 +8,7 @@ export const getPremiumPrice = (age: number, locationValue: number) => {
   return 10 * age * (selectedCountry?.rate || 0);
 };
 
-export const getAdditionalPriceByPackage = (
-  premiumPrice: number,
-  pkgValue: number
-) => {
+export const getAdditionalPriceByPackage = (premiumPrice, pkgValue) => {
   if (!pkgValue) return 0;
 
   const selectedPkg = PACKAGE_CONSTANT.find((p) => p.value === pkgValue);

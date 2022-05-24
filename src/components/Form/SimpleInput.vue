@@ -4,7 +4,7 @@
       type="text"
       v-model="modelValue"
       class="mt-2 p-2 border-2 rounded-lg"
-      :class="[isError(validator) ? 'border-red-400' : '']"
+      :class="[isError(validator) ? 'border-red-400' : '', extraClass]"
       @input="handleInput"
     />
     <div class="mt-1">
@@ -32,6 +32,10 @@ export default {
     },
     validator: {
       required: false,
+    },
+    extraClass: {
+      required: false,
+      type: String,
     },
   },
   components: {
