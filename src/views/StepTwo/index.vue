@@ -34,9 +34,9 @@
         <div class="my-2 flex flex-col md:text-lg">
           <label> Where do you live:</label>
           <select
-            v-model="form.location"
-            class="mt-2 py-3 px-2 border-2 rounded-lg location"
-            :onchange="(e) => setLocalStorageValue('location', e.target.value)"
+            v-model="form.country"
+            class="mt-2 py-3 px-2 border-2 rounded-lg country"
+            :onchange="(e) => setLocalStorageValue('country', e.target.value)"
           >
             <option
               v-for="country in countryInformations"
@@ -140,7 +140,7 @@ export default {
       form: {
         name: "",
         age: 0,
-        location: 0,
+        country: 0,
         pkg: 0,
       },
     };
@@ -156,7 +156,7 @@ export default {
   computed: {
     selectedCurrency() {
       return (
-        this.countryInformations.find((c) => c.value === this.form.location)
+        this.countryInformations.find((c) => c.value === this.form.country)
           ?.currency || ""
       );
     },
@@ -178,12 +178,12 @@ export default {
         this.v$.form[`${key}`].$touch();
       }
     }
-    const location = getLocalStorageValue("location");
+    const country = getLocalStorageValue("country");
     if (
-      location &&
-      COUNTRY_INFORMATIONS_CONSTANT.map((c) => c.value).includes(+location)
+      country &&
+      COUNTRY_INFORMATIONS_CONSTANT.map((c) => c.value).includes(+country)
     ) {
-      this.form.location = +location;
+      this.form.country = +country;
     }
 
     const pkg = getLocalStorageValue("pkg");
@@ -197,7 +197,7 @@ export default {
     },
 
     premiumPrice() {
-      return getPremiumPrice(this.form.age, this.form.location);
+      return getPremiumPrice(this.form.age, this.form.country);
     },
 
     additionalPrice(pkgValue) {

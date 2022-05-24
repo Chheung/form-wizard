@@ -10,19 +10,19 @@
         <p class="my-2">Age: {{ age }}</p>
         <p class="my-2">
           Where do you live:
-          {{ selectedLocation.label }}
+          {{ selectedcountry.label }}
         </p>
         <p class="my-2">
           Package:
           {{
             selectedPackageObject.label
               .replace("__additionalPrice__", additionalPrice)
-              .replace("__currency__", selectedLocation.currency)
+              .replace("__currency__", selectedcountry.currency)
           }}
         </p>
         <p class="my-2">
           Premium:
-          {{ totalPrice + " " + selectedLocation.currency }}
+          {{ totalPrice + " " + selectedcountry.currency }}
         </p>
       </div>
 
@@ -62,11 +62,11 @@ export default {
       packages: PACKAGE_CONSTANT,
       name: "",
       age: 0,
-      location: 0,
+      country: 0,
       pkg: 0,
       totalPrice: 0,
       selectedPackageObject: PACKAGE_CONSTANT[0], // Default
-      selectedLocation: COUNTRY_INFORMATIONS_CONSTANT[0], // Default
+      selectedcountry: COUNTRY_INFORMATIONS_CONSTANT[0], // Default
       additionalPrice: 0,
     };
   },
@@ -74,14 +74,14 @@ export default {
   mounted() {
     this.name = getLocalStorageValue("name");
     this.age = +getLocalStorageValue("age");
-    this.location = +getLocalStorageValue("location");
+    this.country = +getLocalStorageValue("country");
     this.pkg = +getLocalStorageValue("pkg");
 
     if (
       !isValidFormData({
         name: this.name,
         age: this.age,
-        location: this.location,
+        country: this.country,
         pkg: this.pkg,
       })
     ) {
@@ -92,11 +92,11 @@ export default {
       (pkg) => pkg.value === this.pkg
     );
 
-    this.selectedLocation = COUNTRY_INFORMATIONS_CONSTANT.find(
-      (ci) => ci.value === this.location
+    this.selectedcountry = COUNTRY_INFORMATIONS_CONSTANT.find(
+      (ci) => ci.value === this.country
     );
 
-    const premiumPrice = getPremiumPrice(this.age, this.location);
+    const premiumPrice = getPremiumPrice(this.age, this.country);
     this.additionalPrice = getAdditionalPriceByPackage(premiumPrice, this.pkg);
 
     this.totalPrice = premiumPrice + this.additionalPrice;

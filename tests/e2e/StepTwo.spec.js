@@ -15,7 +15,7 @@ describe("StepTwo.vue", () => {
     await page.waitForSelector("input.name");
     await page.type("input.name", "Chheung");
     await page.type("input.age", "10");
-    await page.select(".location", "0");
+    await page.select(".country", "0");
     await page.click('input[value="0"]');
 
     await page.waitForSelector("h2");

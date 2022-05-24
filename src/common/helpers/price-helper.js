@@ -1,8 +1,8 @@
 import { COUNTRY_INFORMATIONS_CONSTANT, PACKAGE_CONSTANT } from "..";
 
-export const getPremiumPrice = (age, locationValue) => {
+export const getPremiumPrice = (age, countryValue) => {
   const selectedCountry = COUNTRY_INFORMATIONS_CONSTANT.find(
-    (c) => c.value === locationValue
+    (c) => c.value === countryValue
   );
 
   return 10 * age * (selectedCountry?.rate || 0);
