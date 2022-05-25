@@ -50,3 +50,11 @@
 ### - Simple and minimal UI/UX for user to easily interact with.
 
 ### - Have a nice validations at each pages to make sure users will not be seeing false data or invalid modified data.
+
+### - No over engineering, despite having alot of UX in mind for this form wizard, I will not over engineer it too much ( such as move every input, radio button, button, into components... etc)
+
+<br>
+
+### Questions: Why dist is ignored in .gitignore ?
+
+> Since this is just a demo and I try to save money from by hosting it in DigitalOcean app platform, I just have to push a built file in `dist` into DigitalOcean and it will be hosted as a static file ( free instead of 5$ per month ).

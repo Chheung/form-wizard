@@ -2,16 +2,16 @@
   <div class="min-h-full flex flex-col justify-center items-center">
     <div class="my-10 md:max-w-2xl md:w-full border-2 rounded-xl">
       <!-- Form Block -->
-      <div class="mx-5 md:mx-0 md:px-20 pt-10 md:pt-20">
+      <div class="mx-5 md:mx-0 md:px-20 pt-5 md:pt-10">
         <div>
           <h2
-            class="text-black text-3xl md:text-4xl font-bold text-center md:mb-20"
+            class="text-black text-2xl md:text-4xl font-bold text-center my-4 md:my-6"
           >
             Tell us about yourself!
           </h2>
         </div>
 
-        <div class="mt-10 flex flex-col md:text-lg">
+        <div class="mt-10 flex flex-col text-sm md:text-md">
           <label> Name:</label>
           <SimpleInput
             v-model="v$.form.name.$model"
@@ -21,7 +21,7 @@
             label="Name"
           />
         </div>
-        <div class="my-2 flex flex-col md:text-lg">
+        <div class="my-2 flex flex-col text-sm md:text-lg">
           <label> Age:</label>
           <SimpleInput
             v-model="v$.form.age.$model"
@@ -31,7 +31,7 @@
             label="Age"
           />
         </div>
-        <div class="my-2 flex flex-col md:text-lg">
+        <div class="my-2 flex flex-col text-sm md:text-md">
           <label> Where do you live:</label>
           <select
             v-model="form.country"
@@ -55,7 +55,7 @@
           <!-- Packages -->
           <div class="pt-5 md:pt-10"></div>
           <div
-            class="my-2 flex flex-col md:text-lg"
+            class="my-2 flex flex-col text-sm md:text-md"
             v-for="pkg in packages"
             :key="pkg.value"
           >
@@ -82,7 +82,7 @@
 
           <!-- Total price -->
           <div class="mt-10 text-center">
-            <p id="premium-price" class="text-2xl md:text-3xl">
+            <p id="premium-price" class="text-xl md:text-2xl">
               Your premium is
               {{ totalPrice }}
               {{ selectedCurrency }}
@@ -90,15 +90,15 @@
           </div>
 
           <!-- Back/Next Buttons -->
-          <div class="flex space-x-4 text-center pb-10">
+          <div class="flex space-x-4 text-center pb-5">
             <div
-              class="mt-10 mx-auto py-2 w-2/3 text-black text-lg md:text-2xl bg-white rounded-lg cursor-pointer"
+              class="mt-10 mx-auto py-2 w-2/3 text-black text-md md:text-xl bg-white rounded-lg cursor-pointer"
             >
               <router-link class="block" to="/step-1"> Back </router-link>
             </div>
 
             <div
-              class="mt-10 mx-auto py-2 w-2/3 text-white text-lg md:text-2xl bg-black border-2 border-gray-200 rounded-lg cursor-pointer text-center"
+              class="mt-10 mx-auto py-2 w-2/3 text-white text-md md:text-xl bg-black border-2 border-gray-200 rounded-lg cursor-pointer text-center"
             >
               <router-link
                 class="block"
