@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full flex justify-center items-center">
+  <div class="h-full mx-2 flex justify-center items-center">
     <div
-      class="md:max-w-2xl md:w-full mx-5 lg:mx-0 px-5 md:px-20 py-10 md:py-20 bg-gray-100 text-center rounded-lg"
+      class="w-full md:max-w-2xl md:w-full mx-5 lg:mx-0 px-5 md:px-20 py-10 md:py-20 bg-gray-100 text-center rounded-lg"
     >
       <h2 class="text-black text-4xl font-bold">Summary</h2>
       <p class="my-5 text-xl font-semibold">{{ name }} ,</p>
