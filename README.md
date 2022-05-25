@@ -1,12 +1,20 @@
-## Recommended IDE Setup
+### For demo:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+https://monkfish-app-yj5sq.ondigitalocean.app
 
-### To start the app please run:
+### Node version used:
+
+- node 17.9.0
+
+### To build:
+
+- `npm run build`
+
+### To start the app in development mode:
 
 - `npm run dev`
 
-### For testing please run:
+### For e2e testing:
 
-- `npm run dev` ( For puppeteer e2e testing )
+- `npm run dev` ( Host a server for puppeteer )
 - `npm run test:unit`

@@ -57,4 +57,4 @@
 
 ### Questions: Why dist is ignored in .gitignore ?
 
-> Since this is just a demo and I try to save money from by hosting it in DigitalOcean app platform, I just have to push a built file in `dist` into DigitalOcean and it will be hosted as a static file ( free instead of 5$ per month ).
+> For free hosting ( On Digital Ocean ), since we already build static files in local, we can push it and tell Digital Ocean to not host a node server for us but rather serve us a static file.

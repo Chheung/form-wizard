@@ -21,7 +21,7 @@
             label="Name"
           />
         </div>
-        <div class="my-2 flex flex-col text-sm md:text-lg">
+        <div class="my-2 flex flex-col text-sm md:text-md">
           <label> Age:</label>
           <SimpleInput
             v-model="v$.form.age.$model"
