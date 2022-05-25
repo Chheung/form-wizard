@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-full flex flex-col justify-center items-center">
-    <div class="my-10 md:max-w-2xl md:w-full border-2 rounded-xl">
+  <div class="mx-2 min-h-full flex flex-col justify-center items-center">
+    <div class="my-10 w-full md:max-w-2xl md:w-full border-2 rounded-xl">
       <!-- Form Block -->
       <div class="mx-5 md:mx-0 md:px-20 pt-5 md:pt-10">
         <div>
