@@ -51,7 +51,7 @@
 
 ### - Have a nice validations at each pages to make sure users will not be seeing false data or invalid modified data.
 
-### - No over engineering, despite having alot of UX in mind for this form wizard, I will not over engineer it too much ( such as move every input, radio button, button, into components... etc)
+### - No over engineering, despite having alot of UX in mind for this form wizard, I will not over engineer it too much ( such as notification banner on error, move every input, radio button, button, into components... etc)
 
 <br>
 
