@@ -12,7 +12,7 @@
         v-if="isError(validator)"
         :errorText="getValidatorErrorMessage(validator)"
       />
-      <div v-else style="height: 28px"></div>
+      <div v-else style="height: 20px"></div>
     </div>
   </div>
 </template>
@@ -60,6 +60,9 @@ export default {
         }
         case "integer": {
           return `${label} must be a number`;
+        }
+        case "minValue": {
+          return `${label} must be greater than ${validator.$errors[0].$params.min}`;
         }
         default:
           return `${label} field has an error`;

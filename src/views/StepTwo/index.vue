@@ -97,27 +97,22 @@
               <router-link class="block" to="/step-1"> Back </router-link>
             </div>
 
-            <div
+            <button
               class="mt-10 mx-auto py-2 w-2/3 text-white text-md md:text-xl bg-black border-2 border-gray-200 rounded-lg cursor-pointer text-center"
+              @click="submit"
             >
-              <router-link
-                class="block"
-                :to="form.age > 100 ? '/step-2/error' : '/step-3'"
-              >
-                Next
-              </router-link>
-            </div>
+              Next
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <router-view></router-view>
 </template>
 
 <script>
 import useVuelidate from "@vuelidate/core";
-import { required, integer } from "@vuelidate/validators";
+import { required, integer, minValue } from "@vuelidate/validators";
 
 import SimpleInput from "../../components/Form/SimpleInput.vue";
 import {
@@ -149,7 +144,7 @@ export default {
     return {
       form: {
         name: { required },
-        age: { required, integer },
+        age: { required, integer, minValue: minValue(1) },
       },
     };
   },
@@ -202,6 +197,17 @@ export default {
 
     additionalPrice(pkgValue) {
       return getAdditionalPriceByPackage(this.premiumPrice(), pkgValue);
+    },
+    submit() {
+      this.v$.$touch();
+
+      console.log("hi");
+      if (this.v$.$invalid) {
+        return;
+      }
+      if (this.form.age > 100) return this.$router.push("/step-2/error");
+
+      return this.$router.push("/step-3");
     },
   },
 };
